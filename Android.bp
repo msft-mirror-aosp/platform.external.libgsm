@@ -17,6 +17,7 @@
 cc_library_static {
     name: "libgsm",
     vendor_available: true,
+    host_supported: true,
 
     srcs: [
         "src/add.c",
@@ -42,6 +43,12 @@ cc_library_static {
         "-Wno-comment",
         "-Wno-unused-parameter",
     ],
+
+    target: {
+        darwin: {
+            enabled: false,
+        },
+    },
 
     export_include_dirs: ["inc"],
 }
