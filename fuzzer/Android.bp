@@ -27,4 +27,10 @@ cc_fuzz {
     static_libs: [
         "libgsm",
     ],
+    fuzz_config: {
+        cc: [
+            "android-media-fuzzing-reports@google.com",
+        ],
+        componentid: 155276,
+    },
 }
