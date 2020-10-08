@@ -18,12 +18,9 @@
  * Originally developed and contributed by Ittiam Systems Pvt. Ltd, Bangalore
  */
 
-cc_fuzz {
-    name: "gsm_dec_fuzzer",
+cc_defaults {
+    name: "gsm_fuzzer_defaults",
     host_supported: true,
-    srcs: [
-        "gsm_dec_fuzzer.cpp",
-    ],
     static_libs: [
         "libgsm",
     ],
@@ -33,4 +30,20 @@ cc_fuzz {
         ],
         componentid: 155276,
     },
+}
+
+cc_fuzz {
+    name: "gsm_dec_fuzzer",
+    defaults: ["gsm_fuzzer_defaults"],
+    srcs: [
+        "gsm_dec_fuzzer.cpp",
+    ],
+}
+
+cc_fuzz {
+    name: "gsm_enc_fuzzer",
+    defaults: ["gsm_fuzzer_defaults"],
+    srcs: [
+        "gsm_enc_fuzzer.cpp",
+    ],
 }
