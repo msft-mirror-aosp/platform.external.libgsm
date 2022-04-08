@@ -9,10 +9,6 @@
 #ifndef	PRIVATE_H
 #define	PRIVATE_H
 
-#ifdef __cplusplus
- 	extern "C" {
-#endif
-
 typedef short			word;		/* 16 bit signed int	*/
 typedef long			longword;	/* 32 bit signed int	*/
 
@@ -269,9 +265,5 @@ extern word gsm_FAC[8];
 #endif /* !NDEBUG */
 
 #include "unproto.h"
-
-#ifdef __cplusplus
-	}  // extern "C"
-#endif
 
 #endif	/* PRIVATE_H */

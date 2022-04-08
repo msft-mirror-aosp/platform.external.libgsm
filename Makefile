@@ -102,7 +102,7 @@ AR		= ar
 ARFLAGS		= cr
 RMFLAGS		=
 FIND		= find
-COMPRESS 	= gzip
+COMPRESS 	= compress
 COMPRESSFLAGS 	= 
 # RANLIB 	= true
 RANLIB	 	= ranlib
@@ -401,14 +401,14 @@ $(GSM_INSTALL_LIB)/libgsm.a:	$(LIBGSM)
 
 # Distribution
 
-dist:		gsm-1.0.tar.gz
+dist:		gsm-1.0.tar.Z
 		@echo dist: Done.
 
-gsm-1.0.tar.gz:	$(STUFF) $(SOURCES) $(HEADERS) $(MANUALS)
+gsm-1.0.tar.Z:	$(STUFF) $(SOURCES) $(HEADERS) $(MANUALS)
 		(	cd $(ROOT)/..;				\
 			tar cvf - `cat $(ROOT)/gsm-1.0/MANIFEST	\
 				| sed '/^#/d'`			\
-		) | $(COMPRESS) $(COMPRESSFLAGS) > $(ROOT)/gsm-1.0.tar.gz
+		) | $(COMPRESS) $(COMPRESSFLAGS) > $(ROOT)/gsm-1.0.tar.Z
 
 # Clean
 
